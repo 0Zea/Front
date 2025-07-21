@@ -1,7 +1,11 @@
-## 📄 Summary
-- 어떤 부분을 수정/추가했는지 작성해 주세요
+## 📌 Issues
+- closed #이슈번호
 
-<br>
+## 🏁 Work Description
+- 어떤 작업을 했는지
 
-## 🙋🏻 To Reviewers
-- 리뷰어가 주의 깊게 볼 필요가 있는 부분을 작성해 주세요
+## 💬 PR Points
+- 어떤 부분을 리뷰어가 중점적으로 보아야 하는지
+- 우려사항 등
+
+## 📷 Screenshot
