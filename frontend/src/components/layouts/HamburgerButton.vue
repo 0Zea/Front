@@ -15,9 +15,15 @@ const props = defineProps({
 // Emits 정의
 const emit = defineEmits(['close', 'menu-click']);
 
-// 로그인 상태는 store에서 가져오기
-const isLoggedIn = authStore.isLogin;
-const userEmail = authStore.email;
+// 더미 데이터 정의
+const dummyUserData = {
+  isLoggedIn: true,
+  userName: '김콕재',
+};
+
+// 로그인 상태는 더미 데이터 사용 (실제 환경에서는 store 사용)
+const isLoggedIn = dummyUserData.isLoggedIn; // authStore.isLogin;
+const userName = dummyUserData.userName; // authStore.userName;
 
 // 사이드바 닫기
 const closeSidebar = () => {
@@ -42,12 +48,11 @@ const handleMenuClick = (menuType) => {
 </script>
 
 <template>
-  <!-- 햄버거 메뉴 (오버레이 제거) -->
   <div class="hamburgerbar" :class="{ 'hamburgerbar-open': isOpen }">
     <div class="hamburgerbar-content">
       <!-- 로그인된 사용자 정보 표시 -->
       <div v-if="isLoggedIn" class="user-info">
-        <div class="user-email">{{ userEmail }}</div>
+        <div class="user-name">{{ userName }}</div>
       </div>
 
       <!-- 햄버거 메뉴 항목들 -->
@@ -71,7 +76,7 @@ const handleMenuClick = (menuType) => {
   border-radius: 12px 12px 0 0;
 }
 
-.user-email {
+.user-name {
   font-size: 13px;
   font-weight: 600;
   color: #374151;
@@ -118,7 +123,7 @@ const handleMenuClick = (menuType) => {
 
 .hamburgerbar-menu-item {
   padding: 15px 20px;
-  border-bottom: 1px solid #f1f3f4;
+  border-bottom: 1px solid #e5e7eb;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
