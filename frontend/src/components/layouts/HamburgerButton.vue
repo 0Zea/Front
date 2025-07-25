@@ -50,11 +50,6 @@ const handleMenuClick = (menuType) => {
 <template>
   <div class="hamburgerbar" :class="{ 'hamburgerbar-open': isOpen }">
     <div class="hamburgerbar-content">
-      <!-- 로그인된 사용자 정보 표시 -->
-      <div v-if="isLoggedIn" class="user-info">
-        <div class="user-name">{{ userName }}</div>
-      </div>
-
       <!-- 햄버거 메뉴 항목들 -->
       <div class="hamburgerbar-menu">
         <div class="hamburgerbar-menu-item" @click="handleMenuClick('공지사항')">공지사항</div>
@@ -68,22 +63,6 @@ const handleMenuClick = (menuType) => {
 </template>
 
 <style scoped>
-/* 사용자 정보 영역 */
-.user-info {
-  padding: 15px 20px;
-  border-bottom: 2px solid #e5e7eb;
-  background-color: #f8f9fa;
-  border-radius: 12px 12px 0 0;
-}
-
-.user-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #374151;
-  text-align: center;
-  word-break: break-all;
-}
-
 /* 햄버거 메뉴 - 위에서 아래로 드롭다운 */
 .hamburgerbar {
   position: fixed;
